@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import {  Github, Play } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Github, Play } from "lucide-react";
 
 interface ProjectsProps {
   isDarkMode: boolean;
@@ -9,59 +9,102 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
   const projects = [
     {
-      title: "AI Assistant Platform",
-      description: "24/7 AI helpdesk builder for businesses with custom knowledge base integration and multi-channel support.",
-      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tags: ["OpenAI", "RAG", "MERN", "Socket.io"],
+      title: "AI Study Assistant Platform",
+      description:
+        "Developed a responsive AI-powered learning assistant using OpenAI GPT-4 that delivers real-time, contextual answers via text and voice chat. Enabled study material uploads, personalized AI tutor behavior, secure JWT-authenticated sessions, and subscription-based Razorpay payments.",
+      image:
+        "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600",
+      tags: [
+        "OpenAI",
+        "RAG",
+        "MERN",
+        "Socket.io",
+        "Amazon S3",
+        "Razorpay",
+        "JWT",
+      ],
       liveDemo: "#",
       github: "#",
-      featured: true
+      featured: true,
     },
+
     {
-      title: "RAG Document Analyzer",
-      description: "Retrieval-Augmented Generation app that analyzes custom documents and provides intelligent responses.",
-      image: "https://images.pexels.com/photos/5029857/pexels-photo-5029857.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tags: ["LangChain", "Vector DB", "React", "Python"],
-      liveDemo: "#",
-      github: "#",
-      featured: true
+      title: "AI-Powered FAQ Chatbot for Websites",
+      description:
+        "Built a customizable AI-powered FAQ chatbot that can be embedded into any business website to handle customer queries instantly",
+      image:
+        "https://www.shutterstock.com/image-vector/coming-soon-on-dark-background-600nw-2433357767.jpg",
+      tags: [
+        "MERN Stack",
+        "OpenAI API",
+        "Prompt Engineering",
+        "Widget Integration",
+        "Pinecone",
+      ],
+      liveDemo: "#", // Replace with actual live link
+      github: "#", // Replace with actual GitHub repo link
+      featured: false,
     },
+
     {
-      title: "Voice-to-AI Assistant",
-      description: "Real-time voice conversation with AI using Whisper for speech-to-text and GPT for responses.",
-      image: "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tags: ["Whisper", "OpenAI", "WebRTC", "Node.js"],
+      title: "AI-Powered T&C Summarizer",
+      description:
+        "Built an AI-driven solution that analyzes Terms & Conditions from uploaded files or URLs, highlights key clauses, and allows users to explore important areas like privacy, payments, and liabilities in detail.",
+      image:
+        "https://www.shutterstock.com/image-vector/coming-soon-on-dark-background-600nw-2433357767.jpg",
+      tags: [
+        "OpenAI",
+        "MERN Stack",
+        "Skypper",
+        "Web Scraping",
+        "Document Parsing",
+      ],
       liveDemo: "#",
       github: "#",
-      featured: false
+      featured: false,
     },
+
     {
-      title: "Smart Resume Analyzer",
-      description: "AI-powered resume analyzer that matches candidates with job requirements and provides optimization suggestions.",
-      image: "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tags: ["NLP", "React", "Express", "TensorFlow"],
+      title: "Social Media Post Generator",
+      description:
+        "Automated tool that generates engaging post content for LinkedIn, Twitter, and Instagram based on user-provided keywords or topics using GPT. Allows users to copy, save, or publish content directly.",
+      image:
+        "https://www.shutterstock.com/image-vector/coming-soon-on-dark-background-600nw-2433357767.jpg",
+      tags: ["MERN Stack", "OpenAI", "Zapier", "Content Automation"],
       liveDemo: "#",
       github: "#",
-      featured: false
+      featured: false,
     },
+
     {
-      title: "Personal Tutor AI",
-      description: "Adaptive learning assistant with memory capabilities using LangChain and vector databases.",
-      image: "https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tags: ["LangChain", "Memory", "Next.js", "Pinecone"],
+      title: "Student Doubt Solver App (Ask Your AI Tutor)",
+      description:
+        "A Chrome extension where students can ask doubts by uploading documents, files, or images. The AI (powered by GPT) responds with step-by-step, subject-aware answers. Includes topic selection, Q&A history, and prompt chaining for detailed solutions.",
+      image:
+        "https://www.shutterstock.com/image-vector/coming-soon-on-dark-background-600nw-2433357767.jpg",
+      tags: [
+        "MERN",
+        "OpenAI",
+        "Chrome Extension",
+        "LangChain",
+        "Speech-to-Text",
+      ],
       liveDemo: "#",
       github: "#",
-      featured: false
+      featured: false,
     },
+
     {
-      title: "Chrome Extension Chatbot",
-      description: "Browser extension that provides AI assistance while browsing, with context-aware responses.",
-      image: "https://images.pexels.com/photos/11035544/pexels-photo-11035544.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tags: ["Chrome API", "OpenAI", "JavaScript", "CSS"],
+      title: "Smart Product Description Generator",
+      description:
+        "Tool for e-commerce sellers to auto-generate optimized product descriptions for platforms like Amazon, Etsy, etc. Users upload product name & features (via form or CSV) and get SEO-rich descriptions, titles, and bullet points. Tone customization supported.",
+      image:
+        "https://www.shutterstock.com/image-vector/coming-soon-on-dark-background-600nw-2433357767.jpg",
+      tags: ["MERN", "OpenAI", "CSV Parser", "Excel Export", "SEO"],
       liveDemo: "#",
       github: "#",
-      featured: false
-    }
+      featured: false,
+    },
   ];
 
   const containerVariants = {
@@ -69,9 +112,9 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -80,15 +123,16 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   return (
-    <section id="projects" className={`py-20 ${
-      isDarkMode ? 'bg-gray-800' : 'bg-white'
-    }`}>
+    <section
+      id="projects"
+      className={`py-20 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+    >
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -97,16 +141,24 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
-            isDarkMode ? 'text-white' : 'text-gray-900'
-          }`}>
-            Featured <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">AI Projects</span>
+          <h2
+            className={`text-4xl md:text-5xl font-bold mb-6 ${
+              isDarkMode ? "text-white" : "text-gray-900"
+            }`}
+          >
+            Featured{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+              AI Projects
+            </span>
           </h2>
-          <p className={`text-xl max-w-3xl mx-auto ${
-            isDarkMode ? 'text-gray-300' : 'text-gray-600'
-          }`}>
-            Explore my latest work in AI and full-stack development, showcasing innovative solutions 
-            that combine cutting-edge technology with practical applications.
+          <p
+            className={`text-xl max-w-3xl mx-auto ${
+              isDarkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            Explore my latest work in AI and full-stack development, showcasing
+            innovative solutions that combine cutting-edge technology with
+            practical applications.
           </p>
         </motion.div>
 
@@ -123,12 +175,10 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
               variants={itemVariants}
               whileHover={{ y: -10 }}
               className={`group rounded-xl overflow-hidden border transition-all duration-300 ${
-                isDarkMode 
-                  ? 'bg-gray-900 border-gray-700 hover:border-gray-600' 
-                  : 'bg-white border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-lg'
-              } ${
-                project.featured ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
+                isDarkMode
+                  ? "bg-gray-900 border-gray-700 hover:border-gray-600"
+                  : "bg-white border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-lg"
+              } ${project.featured ? "md:col-span-2 lg:col-span-1" : ""}`}
             >
               <div className="relative overflow-hidden">
                 <img
@@ -136,40 +186,50 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                   alt={project.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                  isDarkMode ? 'from-gray-900/80' : 'from-white/80'
-                }`} />
-                
+                <div
+                  className={`absolute inset-0 bg-gradient-to-t to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                    isDarkMode ? "from-gray-900/80" : "from-white/80"
+                  }`}
+                />
+
                 {project.featured && (
                   <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Featured
                   </div>
                 )}
               </div>
-              
+
               <div className="p-6">
-                <h3 className={`text-xl font-bold mb-2 ${
-                  isDarkMode ? 'text-white' : 'text-gray-900'
-                }`}>{project.title}</h3>
-                <p className={`mb-4 ${
-                  isDarkMode ? 'text-gray-300' : 'text-gray-600'
-                }`}>{project.description}</p>
-                
+                <h3
+                  className={`text-xl font-bold mb-2 ${
+                    isDarkMode ? "text-white" : "text-gray-900"
+                  }`}
+                >
+                  {project.title}
+                </h3>
+                <p
+                  className={`mb-4 ${
+                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
+                >
+                  {project.description}
+                </p>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
                       className={`px-3 py-1 rounded-full text-sm border ${
-                        isDarkMode 
-                          ? 'bg-blue-500/20 text-blue-400 border-blue-500/30' 
-                          : 'bg-blue-100 text-blue-700 border-blue-300/50'
+                        isDarkMode
+                          ? "bg-blue-500/20 text-blue-400 border-blue-500/30"
+                          : "bg-blue-100 text-blue-700 border-blue-300/50"
                       }`}
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="flex gap-4">
                   <motion.a
                     href={project.liveDemo}
@@ -180,7 +240,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                     <Play size={16} />
                     Live Demo
                   </motion.a>
-                  
+
                   <motion.a
                     href={project.github}
                     whileHover={{ scale: 1.05 }}
