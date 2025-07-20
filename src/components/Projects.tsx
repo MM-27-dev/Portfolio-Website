@@ -6,8 +6,23 @@ interface ProjectsProps {
   isDarkMode: boolean;
 }
 
+interface GitHubLink {
+  label: string;
+  url: string;
+}
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  liveDemo: string;
+  github: string | GitHubLink[];
+  featured: boolean;
+}
+
 const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
-  const projects = [
+  const projects: Project[] = [
     {
       title: "AI Study Assistant Platform",
       description:
@@ -23,11 +38,19 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
         "Razorpay",
         "JWT",
       ],
-      liveDemo: "#",
-      github: "#",
+      liveDemo: "https://ai-study-assistant-frontend-three.vercel.app/",
+      github: [
+        {
+          label: "Frontend",
+          url: "https://github.com/MM-27-dev/AIStudyAssistant-Frontend",
+        },
+        {
+          label: "Backend",
+          url: "https://github.com/MM-27-dev/AIStudyAssistant-Backend",
+        },
+      ],
       featured: true,
     },
-
     {
       title: "AI-Powered FAQ Chatbot for Websites",
       description:
@@ -41,11 +64,10 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
         "Widget Integration",
         "Pinecone",
       ],
-      liveDemo: "#", // Replace with actual live link
-      github: "#", // Replace with actual GitHub repo link
+      liveDemo: "#",
+      github: "#",
       featured: false,
     },
-
     {
       title: "AI-Powered T&C Summarizer",
       description:
@@ -63,7 +85,6 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       github: "#",
       featured: false,
     },
-
     {
       title: "Social Media Post Generator",
       description:
@@ -75,7 +96,6 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       github: "#",
       featured: false,
     },
-
     {
       title: "Student Doubt Solver App (Ask Your AI Tutor)",
       description:
@@ -93,7 +113,6 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       github: "#",
       featured: false,
     },
-
     {
       title: "Smart Product Description Generator",
       description:
@@ -230,9 +249,11 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                   ))}
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 relative">
                   <motion.a
                     href={project.liveDemo}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
@@ -241,15 +262,37 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                     Live Demo
                   </motion.a>
 
-                  <motion.a
-                    href={project.github}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-4 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-700 transition-all duration-300"
-                  >
-                    <Github size={16} />
-                    Code
-                  </motion.a>
+                  {Array.isArray(project.github) ? (
+                    <div className="relative group">
+                      <button className="flex items-center gap-2 px-4 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-700 transition-all duration-300">
+                        <Github size={16} />
+                        Code
+                      </button>
+                      <div className="absolute top-1/2 left-full -translate-y-1/2 ml-2 bg-white dark:bg-gray-800 border dark:border-gray-600 rounded-lg shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                        {project.github.map((link, i) => (
+                          <a
+                            key={i}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200"
+                          >
+                            {link.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <motion.a
+                      href={project.github}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-2 px-4 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-700 transition-all duration-300"
+                    >
+                      <Github size={16} />
+                      Code
+                    </motion.a>
+                  )}
                 </div>
               </div>
             </motion.div>
