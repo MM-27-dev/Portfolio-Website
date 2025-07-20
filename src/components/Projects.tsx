@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Play } from 'lucide-react';
+import {  Github, Play } from 'lucide-react';
 
 interface ProjectsProps {
   isDarkMode: boolean;
