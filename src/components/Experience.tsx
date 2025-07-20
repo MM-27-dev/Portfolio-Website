@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, MapPin, ExternalLink } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 
 interface ExperienceProps {
   isDarkMode: boolean;
@@ -14,37 +14,43 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
       location: "Bangalore, India",
       period: "Sep 2023 – Present",
       description:
-        "Contributed to the design and development of scalable full-stack applications with a focus on AI-powered solutions and automation.",
+        "Working as a MERN Stack Developer contributing to full-stack development, frontend performance optimization, and automation testing.",
       achievements: [
-        "Developed and deployed AI-powered Study Assistant using OpenAI GPT-4 for personalized learning support",
-        "Built Mentor Mate platform with dynamic dashboards, role-based login, and real-time task tracking",
-        "Integrated Razorpay payment gateway and Amazon S3 for secure transactions and media handling",
-        "Implemented test automation using Cypress and Playwright for faster, more reliable releases",
+        "Engineered scalable, responsive web applications using React.js, improving frontend performance and user experience.",
+        "Implemented JWT-based role authentication and dynamic dashboard flows tailored to user roles.",
+        "Integrated secure payment gateway (Razorpay) and file management using Amazon S3.",
+        "Collaborated with backend teams to integrate and test RESTful APIs using Axios and Postman.",
+        "Reduced manual testing time by 40% by developing automation suites with Cypress and Playwright.",
+        "Participated in Agile ceremonies and code reviews, ensuring timely delivery and clean, maintainable code.",
       ],
       technologies: [
         "React.js",
         "Node.js",
         "MongoDB",
         "Express.js",
-        "OpenAI API",
         "JWT",
-        "Razorpay",
         "Amazon S3",
+        "Razorpay",
+        "Axios",
         "Cypress",
         "Playwright",
+        "Bootstrap",
+        "Google Maps API",
       ],
     },
     {
       title: "AI Project Contributor",
       company: "Independent Projects",
       location: "Remote",
-      period: "2023 – Present",
+      period: "Present",
       description:
-        "Designed and built AI-driven web applications that solve real-world problems for education and business domains.",
+        "Designed and developed AI-powered web applications targeting education, e-commerce, and customer service domains using modern LLMs and full-stack frameworks.",
       achievements: [
-        "Created an AI FAQ Chatbot platform for websites using OpenAI Embeddings and Vector DBs (Pinecone/Chroma)",
-        "Built a Social Media Post Generator for e-commerce sellers using GPT for SEO-friendly content",
-        "Developed an AI Tutor for students with GPT prompt chaining, voice input, and Q&A history",
+        "Developed an AI Study Assistant using OpenAI GPT-4 with file upload support, voice/text chat, personalized tutor behavior, JWT authentication, and Razorpay subscriptions",
+        "Created a plug-and-play AI FAQ Chatbot that integrates into websites, trained on business-specific data using OpenAI embeddings and Pinecone",
+        "Built a T&C Summarizer to extract and highlight legal clauses from uploaded documents or URLs",
+        "Developed a Chrome extension for doubt-solving that accepts documents or images and responds with contextual answers via OpenAI GPT",
+        "Designed a GPT-powered social media content generator that creates optimized posts based on product keywords",
       ],
       technologies: [
         "MERN Stack",

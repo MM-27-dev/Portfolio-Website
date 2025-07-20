@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Play } from "lucide-react";
 
@@ -22,6 +22,14 @@ interface Project {
 }
 
 const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
+  const [activeDropdownIndex, setActiveDropdownIndex] = useState<number | null>(
+    null
+  );
+
+  const toggleDropdown = (index: number) => {
+    setActiveDropdownIndex(activeDropdownIndex === index ? null : index);
+  };
+
   const projects: Project[] = [
     {
       title: "AI Study Assistant Platform",
@@ -263,24 +271,28 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                   </motion.a>
 
                   {Array.isArray(project.github) ? (
-                    <div className="relative group">
-                      <button className="flex items-center gap-2 px-4 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-700 transition-all duration-300">
+                    <div className="relative">
+                      <button
+                        onClick={() => toggleDropdown(index)}
+                        className="flex items-center gap-2 px-4 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-700 transition-all duration-300"
+                      >
                         <Github size={16} />
                         Code
                       </button>
-                      <div className="absolute top-1/2 left-full -translate-y-1/2 ml-2 bg-white dark:bg-gray-800 border dark:border-gray-600 rounded-lg shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                        {project.github.map((link, i) => (
-                          <a
-                            key={i}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200"
-                          >
-                            {link.label}
-                          </a>
-                        ))}
-                      </div>
+
+                      {activeDropdownIndex === index && (
+                        <div className="absolute left-full top-1/2 -translate-y-1/2 ml-2 bg-white dark:bg-gray-800 border dark:border-gray-600 rounded-lg shadow-md z-10">
+                          {project.github.map((link, i) => (
+                            <a
+                              key={i}
+                              href={link.url}
+                              className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 whitespace-nowrap"
+                            >
+                              {link.label}
+                            </a>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <motion.a
