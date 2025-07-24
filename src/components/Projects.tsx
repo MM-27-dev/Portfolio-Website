@@ -35,8 +35,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       title: "AI Study Assistant Platform",
       description:
         "Developed a responsive AI-powered learning assistant using OpenAI GPT-4 that delivers real-time, contextual answers via text and voice chat. Enabled study material uploads, personalized AI tutor behavior, secure JWT-authenticated sessions, and subscription-based Razorpay payments.",
-      image:
-        "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/AI_Study_Assistant.jpeg",
       tags: [
         "OpenAI",
         "RAG",
@@ -63,18 +62,30 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       title: "AI-Powered FAQ Chatbot for Websites",
       description:
         "Built a customizable AI-powered FAQ chatbot that can be embedded into any business website to handle customer queries instantly",
-      image:
-        "https://www.shutterstock.com/image-vector/coming-soon-on-dark-background-600nw-2433357767.jpg",
+      image: "/ChatWidget.jpeg",
       tags: [
         "MERN Stack",
         "OpenAI API",
         "Prompt Engineering",
         "Widget Integration",
-        "Pinecone",
+        "CDN Deployment",
       ],
-      liveDemo: "#",
-      github: "#",
-      featured: false,
+      liveDemo: "https://customer-support-chatbot-livid.vercel.app/",
+      github: [
+        {
+          label: "Frontend",
+          url: "https://github.com/MM-27-dev/Customer-support-chatbot/",
+        },
+        {
+          label: "Backend",
+          url: "https://github.com/MM-27-dev/Customer-support-chatbot-backend",
+        },
+        {
+          label: "Widget",
+          url: "https://github.com/MM-27-dev/customer-support-widget",
+        },
+      ],
+      featured: true,
     },
     {
       title: "AI-Powered T&C Summarizer",
@@ -208,11 +219,32 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
               } ${project.featured ? "md:col-span-2 lg:col-span-1" : ""}`}
             >
               <div className="relative overflow-hidden">
-                <img
+                {/* <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+                /> */}
+                {project.liveDemo !== "#" ? (
+                  <a
+                    href={project.liveDemo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer"
+                    />
+                  </a>
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                )}
+
                 <div
                   className={`absolute inset-0 bg-gradient-to-t to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                     isDarkMode ? "from-gray-900/80" : "from-white/80"
